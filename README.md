@@ -1,10 +1,17 @@
-# Collect website user activity data and index it into Splunk
+# Collect website user activity data and index to file or HEC
 
-This demo shows interaction of a client side agent running in a browser and Splunk server. There is a single page website in `agent/index.html` that implements a minimalistic tictactoy game. This page loads a javascript agent that traps usera activity events and posts them to Splunk using [HTTP Event Collector](http://dev.splunk.com/view/event-collector/SP-CAAAE6M). Javascript agent is included with a single line at the begining of `index.html`:
+Adapted from https://github.com/oizmerly/dejavu
 
-```html
-<script src="./dejavu.js"></script>
+## Usage
+
 ```
+pip install -r requirements.txt
+flask run 
+```
+ * Open a browser at http://127.0.0.1:5000/
+ 
+
+
 For the sake of simplicity only `mousedown` and `mouseup` events are handled in our browser client. Adding more event handlers is very simple. For instance one may trap `mousemove` events using the code below:
 
 ```js
