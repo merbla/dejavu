@@ -3,10 +3,10 @@ function LOG(msg) {
 }
 
 const Settings = {
-    hec: './dejavu.php' // proxy to Splunk HTTP event collector
+    hec: './diagostics' // proxy to Splunk 
 };
 
-/// Post event to Splunk HTTP Event Collector
+/// Post event to Proxy
 function postEventToSplunk(eventData) {
     xhr = new XMLHttpRequest();
     xhr.open('POST', Settings.hec, true);
